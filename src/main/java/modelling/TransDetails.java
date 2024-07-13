@@ -3,8 +3,8 @@ package modelling;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-sealed public interface TransDetails permits POS, NEFT, ATMCash, FD {
-}
+sealed public interface TransDetails {
+
 
 record POS(String paidTo,
            String city,
@@ -30,4 +30,6 @@ record ATMCash(String ATMCode,
 
 record FD(String AccountNumber)
         implements TransDetails {
+}
+
 }

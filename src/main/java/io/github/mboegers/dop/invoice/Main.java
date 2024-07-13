@@ -1,5 +1,8 @@
 package io.github.mboegers.dop.invoice;
 
+
+import modelling.TransDetails;
+
 import java.util.List;
 
 import static io.github.mboegers.dop.invoice.Dummy.sendViaMail;
@@ -9,7 +12,7 @@ import static java.util.FormatProcessor.FMT;
 class Main {
 
     void main() {
-        System.out.println("Hello World");
+        TransDetails.ATMCash a = new TransDetails.ATMCash("Hej", "Hej", null, null, null);
     }
     //region One method style
 

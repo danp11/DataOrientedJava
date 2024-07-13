@@ -9,13 +9,27 @@ public record BankTransaction(LocalDate date,
                               double creditAmt,
                               double accountBalance) {
 
-    void process(BankTransaction transaction) {
+    void process1() {
+        switch (transDetails) {
+            case TransDetails.POS pos -> print(pos.paidTo());
+            case TransDetails.FD fd -> print(fd.AccountNumber());
+            case TransDetails.ATMCash atmCash -> print(atmCash.city());
+            case TransDetails.NEFT(
+                    _,
+                    var from,
+                    var to,
+                    _
+            ) -> print(from.toUpperCase() + to.toUpperCase());
+        }
+    }
+
+    void process2(BankTransaction transaction) {
         Objects.requireNonNull(transaction);
         switch (transaction.transDetails()) {
-            case POS pos -> print(pos.paidTo());
-            case FD fd -> print(fd.AccountNumber());
-            case ATMCash atmCash -> print(atmCash.city());
-            case NEFT(
+            case TransDetails.POS pos -> print(pos.paidTo());
+            case TransDetails.FD fd -> print(fd.AccountNumber());
+            case TransDetails.ATMCash atmCash -> print(atmCash.city());
+            case TransDetails.NEFT(
                     _,
                     var from,
                     var to,
