@@ -17,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class BusinessKundeMwStTest {
 
+    //Test
     @ParameterizedTest(name = "Businesskunde with Vorsteuerabzugsberechtigung pay 0.0 MwSt for 100.0 invoices")
     @ArgumentsSource(CalculateMwStMethodProvider.class)
     void invoiceValue100WithVorsteuerabzug(BiFunction<Kunde, Double, Double> sut) {
