@@ -8,6 +8,9 @@ import static java.util.FormatProcessor.FMT;
 
 class Main {
 
+    void main() {
+        System.out.println("Hello World");
+    }
     //region One method style
 
     /**
