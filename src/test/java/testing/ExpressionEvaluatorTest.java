@@ -38,8 +38,6 @@ class ExpressionEvaluatorTest {
     @ParameterizedTest
     @MethodSource("provideExpressionsForEvaluate")
     void testEvaluateExpression(TestCase testCase) {
-        ExpressionEvaluator evaluator = new ExpressionEvaluator();
-
         switch (testCase.expectedOutcome()) {
             case Success(int expectedResult) ->
                     Assertions.assertEquals(expectedResult, evaluator.evaluate(testCase.expression()),
