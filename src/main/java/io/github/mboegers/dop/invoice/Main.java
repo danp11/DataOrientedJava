@@ -10,10 +10,6 @@ import static io.github.mboegers.dop.invoice.Dummy.storeInDB;
 import static java.util.FormatProcessor.FMT;
 
 class Main {
-
-    void main() {
-        TransDetails.ATMCash a = new TransDetails.ATMCash("Hej", "Hej", null, null, null);
-    }
     //region One method style
 
     /**
